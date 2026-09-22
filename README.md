@@ -7,5 +7,6 @@ Repositório com minhas práticas dos labs da AWS Academy / Vocareum.
 - [Lab 247 - Linux - sed](./lab-247-linux-sed)
 - [Lab 249 - Alias e PATH](./lab-249-alias-path)
 - [Lab 251 - Backup com tar](./lab-251-backup-tar)
+- [Lab 253 - Shell Loop](./lab-253-shell-loop)
 
 Feito por Luara ☁️
