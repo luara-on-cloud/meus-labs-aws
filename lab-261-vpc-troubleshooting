@@ -1,0 +1,24 @@
+# Lab 261 - Troubleshooting de VPC - Escola da Nuvem / AWS re/Start
+
+### 🎯 Objetivo
+Investigar por que a Instância A (10.0.10.102) não se comunicava com a Instância B (10.0.10.229) dentro da mesma VPC 10.0.10.0/24.
+
+### 🏗️ Arquitetura
+- VPC: vpc-057fe3d90beadd23e (10.0.0.0/16)
+- Subnet pública: 10.0.10.0/24
+- Instâncias: EC2 Amazon Linux
+
+### 🐛 Problema encontrado
+Ping entre as instâncias retornava:
+`100% packet loss`
+
+Ao verificar o Security Group sg-0966a70fdc9edb908, havia apenas regra de entrada para SSH (porta 22).
+
+### ✅ Solução
+Adicionei regra no SG:
+- Tipo: All ICMP - IPv4
+- Origem: 10.0.10.0/24
+
+Comando de teste usado:
+```bash
+ping 10.0.10.102
